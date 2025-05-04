@@ -34,6 +34,7 @@ onBeforeUnmount(() => {
 #cd_text {
   font-family: Arial, Helvetica, sans-serif;
   margin:auto;
+  user-select: none;
 }
 
 #cd_container {
