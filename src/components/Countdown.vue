@@ -26,7 +26,7 @@ onBeforeUnmount(() => {
 <template>
   <div id="container">
     <div id="cd_container">
-      <h1 id="cd_text">{{ distance.asDays().toFixed() }} days</h1>
+      <h1 id="cd_text">- {{ distance.asDays().toFixed() }} giorni</h1>
       <h1 id="cd_text">{{ distance.hours() }}hrs {{ distance.minutes() }}min {{ distance.seconds() }}sec </h1>
     </div>
   </div>
