@@ -10,7 +10,7 @@ var distanceInterval
 calculateDistance()
 
 function calculateDistance() {
-  distance.value = moment.duration(birthdate.diff(moment()))
+  distance.value = -moment.duration(birthdate.diff(moment()))
 }
 
 onBeforeMount(() => {
@@ -25,7 +25,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div id="container">
-    <h1 id="cd_text">{{ Math.floor(distance.asDays()) }} giorni</h1>
+    <h1 id="cd_text">{{ Math.floor(distance.asYears()) }}anni {{ Math.floor(distance.asDays()) }} giorni</h1>
     <h1 id="cd_text">{{ distance.hours() }}hrs {{ distance.minutes() }}min {{ distance.seconds() }}sec </h1>
   </div> 
 </template>
