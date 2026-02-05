@@ -17,4 +17,13 @@ import Countdown from './components/Countdown.vue';
   align-items: center;
   justify-content: center;
 }
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+body {
+  touch-action: none;
+}
 </style>
