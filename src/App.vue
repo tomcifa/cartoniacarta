@@ -12,6 +12,7 @@ import Countdown from './components/Countdown.vue';
 <style scoped>
 #app {
   height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
