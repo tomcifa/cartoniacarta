@@ -2,7 +2,7 @@
 import moment from 'moment'
 import { onBeforeMount, onBeforeUnmount, onMounted, ref } from 'vue'
 
-var birthday = moment('2026-01-28')
+var birthdate = moment('2008-01-28')
 
 let distance = ref()
 var distanceInterval
@@ -10,7 +10,7 @@ var distanceInterval
 calculateDistance()
 
 function calculateDistance() {
-  distance.value = moment.duration(birthday.diff(moment()))
+  distance.value = moment.duration(birthdate.diff(moment()))
 }
 
 onBeforeMount(() => {
@@ -24,11 +24,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <!-- <div id="container">
+  <div id="container">
     <h1 id="cd_text">{{ Math.floor(distance.asDays()) }} giorni</h1>
     <h1 id="cd_text">{{ distance.hours() }}hrs {{ distance.minutes() }}min {{ distance.seconds() }}sec </h1>
   </div> 
-  -->
 </template>
 
 <style>
