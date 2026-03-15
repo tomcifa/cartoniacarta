@@ -14,12 +14,13 @@ function calculateDistance() {
 
   const years = now.diff(birthdate, 'years')
   const months = now.diff(birthdate.clone().add(years, 'years'), 'months')
-  const days = now.diff(birthdate.clone().add(years, 'years'), 'days')
-  const hours = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(days, 'days'), 'hours')
-  const minutes = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(days, 'days').add(hours, 'hours'), 'minutes')
-  const seconds = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(days, 'days').add(hours, 'hours').add(minutes, 'minutes'), 'seconds')
+  const monthDays = now.diff(birthdate.clone().add(years, 'years').add(months, 'months'), 'days')
+  const yearDays = now.diff(birthdate.clone().add(years, 'years'), 'days')
+  const hours = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(monthDays, 'days'), 'hours')
+  const minutes = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(monthDays, 'days').add(hours, 'hours'), 'minutes')
+  const seconds = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(monthDays, 'days').add(hours, 'hours').add(minutes, 'minutes'), 'seconds')
 
-  age.value = { years, months, days, hours, minutes, seconds }
+  age.value = { years, months, monthDays, yearDays, hours, minutes, seconds }
 }
 
 onBeforeMount(() => {
@@ -34,7 +35,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div id="container">
-    <h1 id="cd_text">{{ age.years }}yrs {{ age.days }}days</h1>
+    <h1 id="cd_text">{{ age.years }}yrs {{ age.yearDays }}days</h1>
     <h1 id="cd_text">{{ age.hours }}hrs {{ age.minutes }}min {{ age.seconds }}sec </h1>
   </div> 
 </template>
