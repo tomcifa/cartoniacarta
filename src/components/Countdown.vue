@@ -13,8 +13,7 @@ function calculateDistance() {
   const now = moment()
 
   const years = now.diff(birthdate, 'years')
-  const months = now.diff(birthdate.clone().add(years, 'years'), 'months')
-  const days = now.diff(birthdate.clone().add(years, 'years').add(months, 'months'), 'days')
+  const days = now.diff(birthdate.clone().add(years, 'years'), 'days')
   const hours = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(days, 'days'), 'hours')
   const minutes = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(days, 'days').add(hours, 'hours'), 'minutes')
   const seconds = now.diff(birthdate.clone().add(years, 'years').add(months, 'months').add(days, 'days').add(hours, 'hours').add(minutes, 'minutes'), 'seconds')
